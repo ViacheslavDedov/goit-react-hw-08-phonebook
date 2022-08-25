@@ -1,7 +1,7 @@
 import ContactItem from 'components/ContactItem';
 import Loader from 'components/Loader/Loader';
 import { useSelector } from 'react-redux';
-import { useGetContactsQuery } from 'redux/operations';
+import { useGetContactsQuery } from 'redux/auth/auth-operations';
 import css from './ContactList.module.css';
 
 const ContactList = () => {
