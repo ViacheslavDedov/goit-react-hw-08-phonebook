@@ -1,0 +1,12 @@
+.contacts__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts__btn {
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}

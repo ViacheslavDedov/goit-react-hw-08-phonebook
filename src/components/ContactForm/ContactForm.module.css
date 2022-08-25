@@ -1,0 +1,22 @@
+.form {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.form__label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form__input {
+    width: 180px;
+}
+
+.form__btn {
+    align-items: center;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+}
