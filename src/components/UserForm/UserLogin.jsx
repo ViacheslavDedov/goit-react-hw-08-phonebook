@@ -69,7 +69,7 @@ export const UserLogin = ({ nameI = 'User', skip = true }) => {
               placeholder="email"
               onChange={handelChange}
             />
-            <FormLabel htmlFor="floatingInput">Email address</FormLabel>
+            <FormLabel htmlFor="floatingInput"></FormLabel>
           </FormBlock>
           <FormBlock className="form-floating">
             <FormInput
@@ -82,7 +82,7 @@ export const UserLogin = ({ nameI = 'User', skip = true }) => {
               placeholder="password"
               onChange={handelChange}
             />
-            <FormLabel htmlFor="floatingPassword">Password</FormLabel>
+            <FormLabel htmlFor="floatingPassword"></FormLabel>
           </FormBlock>
           <FormButtonSubmit className="btn btn-light">
             Sign In{' '}

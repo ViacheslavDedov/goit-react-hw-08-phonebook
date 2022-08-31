@@ -85,7 +85,7 @@ export const UserForm = ({ nameI = 'User', skip = true }) => {
               placeholder="name"
               onChange={handelChange}
             />
-            <FormLabel htmlFor="floatingInput">Name</FormLabel>
+            <FormLabel htmlFor="floatingInput"></FormLabel>
           </FormBlock>
 
           <FormBlock className="form-floating mb-3">
@@ -99,7 +99,7 @@ export const UserForm = ({ nameI = 'User', skip = true }) => {
               placeholder="email"
               onChange={handelChange}
             />
-            <FormLabel htmlFor="floatingInput">Email address</FormLabel>
+            <FormLabel htmlFor="floatingInput"></FormLabel>
           </FormBlock>
 
           <FormBlock className="form-floating">
@@ -113,7 +113,7 @@ export const UserForm = ({ nameI = 'User', skip = true }) => {
               placeholder="password"
               onChange={handelChange}
             />
-            <FormLabel htmlFor="floatingPassword">Password</FormLabel>
+            <FormLabel htmlFor="floatingPassword"></FormLabel>
           </FormBlock>
           <FormButtonSubmit className="btn btn-light">Sign Up</FormButtonSubmit>
         </FormRegister>
