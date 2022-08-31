@@ -17,7 +17,7 @@ export const Label = styled.label`
 `;
 
 export const Button = styled.button`
-  color: lightblue;
+  color: black;
   align-items: center;
   cursor: pointer;
   padding: 5px;

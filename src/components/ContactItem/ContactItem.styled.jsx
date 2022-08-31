@@ -13,7 +13,7 @@ export const Tel = styled.span`
 `;
 
 export const DeleteButton = styled.button`
-  color: lightblue;
+  color: black;
   align-items: center;
   cursor: pointer;
   padding: 5px;

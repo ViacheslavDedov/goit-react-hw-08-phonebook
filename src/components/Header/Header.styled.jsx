@@ -25,7 +25,7 @@ export const NavLinkStyled = styled(NavLink)`
 `;
 
 export const NavButtonStyled = styled.button`
-  color: lightblue;
+  color: black;
   font-weight: 400;
   cursor: pointer;
   background-color: orange;
