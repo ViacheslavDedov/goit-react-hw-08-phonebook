@@ -1,14 +1,18 @@
+import { Container } from 'components/App/App.styled';
+import ContactList from 'components/Contacts';
+import Loader from 'components/Loader/Loader';
+import Section from 'components/Section/Section';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAddContactMutation, useGetContactsQuery } from 'redux/auth/auth-operations';
-import css from './ContactForm.module.css';
+import { Button, FormName, InputName, Label } from './ContactForm.styled';
 
 const ContactForm = () => {
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [number, setNumber] = useState('');
 
-  const [addContacts] = useAddContactMutation();
+  const [addContact, { isLoading }] = useAddContactMutation();
   const { data } = useGetContactsQuery();
 
 const handleChange = e => {
@@ -17,8 +21,8 @@ const handleChange = e => {
         case 'name':
             setName(value);
             break;
-        case 'phone':
-            setPhone(value);
+        case 'number':
+            setNumber(value);
             break;
         default:
             break;
@@ -30,38 +34,34 @@ const handleSubmit = async evt => {
 
     if (data.some(contact => contact.name.toLowerCase() === name.toLowerCase())) {
     resetForm();
-        return toast.error(`${name} is already in contacts!`, {theme: "colored"});
+        return Notify.failure(`${name} is already in contacts!`);
     }
 
-    if (data.some(contact => contact.phone === phone)) {
+    if (data.some(contact => contact.number === number)) {
     resetForm();
-        return toast.error(`${phone} is already in contacts!`, {theme: "colored"});
+        return Notify.failure(`${number} is already in contacts!`);
     }
     
-    if (name && phone) {
-        await addContacts({ name: name, phone: phone });
-        toast.success(`${name} added to contacts!`, {theme: "colored"});
+    if (name && number) {
+        await addContact({ name: name, number: number });
+        Notify.success(`${name} added to contacts!`);
     resetForm();
     }
   };
     
 const resetForm = () => {
     setName('');
-    setPhone('');
+    setNumber('');
     }
     
     return (
-        <>
-          <ToastContainer
-                autoClose={3000}
-                position="top-center"
-          />
-            <form className={css.form} onSubmit={handleSubmit}>
+        <Container>
+            <Section title={'Phonebook'}>
+            <FormName onSubmit={handleSubmit}>
 
-                <label className={css.form__label}>
+                <Label>
                 Name
-                    <input
-                    className={css.form__input}
+                    <InputName
                     type="text"
                     name="name"
                     value={name}
@@ -70,28 +70,31 @@ const resetForm = () => {
                     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                     required
                     />
-                    </label>
+                    </Label>{' '}
 
                 <br />
 
-                    <label className={css.form__label}>
+                    <Label>
                     Phone
-                    <input
-                    className={css.form__input}
+                    <InputName
                     type="tel"
                     name="phone"
-                    value={phone}
+                    value={number}
                     onChange={handleChange}
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                     />
-                    </label>
+                    </Label>
 
-                <button className={css.form__btn} type="submit">Add contact</button>
+                <Button type="submit">
+            {isLoading ? <Loader /> : 'Add contact'}
+          </Button>
 
-            </form>
-            </>
+            </FormName>
+            <ContactList />
+            </Section>
+            </Container>
     )}
 
 export default ContactForm;

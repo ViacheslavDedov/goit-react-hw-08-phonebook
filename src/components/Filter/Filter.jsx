@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/actions';
-import css from './Filter.module.css';
+import { FilterInput } from './Filter.styled';
 
 const Filter = () => {  
   
@@ -10,14 +10,9 @@ const Filter = () => {
   };
 
   return (
-    <label className={css.filter__label}>
-      Find contacts by name 
-      <input
-        className={css.filter__input}
-        type="text"
-        onChange={onChange}
-        />
-    </label>
+    <>
+      Find contacts by name <FilterInput type="text" onChange={onChange} />
+    </>
   )
 }
 

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { toast } from 'react-toastify';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export const userApi = createApi({
   reducerPath: 'authApi',
@@ -58,7 +58,7 @@ export const userApi = createApi({
       query: contactId => ({
         url: `/contacts/${contactId}`,
         method: 'DELETE',
-        body: toast.warning(`Contact is deleted!`, {theme: "colored"}),
+        body: Notify.failure(`Contact is deleted!`),
       }),
       invalidatesTags: [{ type: 'User' }],
     }),
