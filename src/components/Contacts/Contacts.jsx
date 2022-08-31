@@ -1,4 +1,4 @@
-import ContactName from 'components/ContactItem';
+import ContactName from 'components/ContactItem/ContactItem';
 import Filter from 'components/Filter/Filter';
 import Loader from 'components/Loader/Loader';
 import { Heading } from 'components/Section/Section.styled';

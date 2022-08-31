@@ -1,4 +1,4 @@
-import ContactForm from 'components/ContactForm/ContactForm';
+import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Header } from 'components/Header/Header';
 import Home from 'components/Home/Home';
 import { UserForm } from 'components/UserForm/UserForm';

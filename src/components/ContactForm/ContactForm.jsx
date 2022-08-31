@@ -1,5 +1,5 @@
 import { Container } from 'components/App/App.styled';
-import ContactList from 'components/Contacts';
+import Contacts from 'components/Contacts/Contacts';
 import Loader from 'components/Loader/Loader';
 import Section from 'components/Section/Section';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useAddContactMutation, useGetContactsQuery } from 'redux/auth/auth-operations';
 import { Button, FormName, InputName, Label } from './ContactForm.styled';
 
-const ContactForm = () => {
+export const ContactForm = () => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
 
@@ -72,13 +72,11 @@ const resetForm = () => {
                     />
                     </Label>{' '}
 
-                <br />
-
                     <Label>
-                    Phone
+                    Number
                     <InputName
                     type="tel"
-                    name="phone"
+                    name="number"
                     value={number}
                     onChange={handleChange}
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -92,9 +90,9 @@ const resetForm = () => {
           </Button>
 
             </FormName>
-            <ContactList />
+            <Contacts />
             </Section>
             </Container>
     )}
 
-export default ContactForm;
+// export default ContactForm;

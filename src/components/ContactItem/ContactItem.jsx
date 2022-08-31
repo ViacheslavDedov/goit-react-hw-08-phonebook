@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDeleteContactMutation } from 'redux/auth/auth-operations';
-import Loader from '../Loader/Loader';
+import Loader from 'components/Loader/Loader';
 import { ContactText, DeleteButton, Tel } from './ContactItem.styled';
 
 const ContactName = ({ id, name, tel }) => {
