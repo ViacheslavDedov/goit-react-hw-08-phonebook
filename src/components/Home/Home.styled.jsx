@@ -15,4 +15,8 @@ export const Heading = styled.h1`
   color: orange;
   font-size: 90px;
   font-weight: 700;
+  
+    :hover {
+      color: grey;
+    }
 `;

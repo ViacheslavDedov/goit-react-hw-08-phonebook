@@ -7,7 +7,16 @@ export const FormRegister = styled.form`
 `;
 
 export const FormBlock = styled.div``;
-export const FormInput = styled.input``;
+export const FormInput = styled.input`
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+
+    :hover {
+        color: grey;
+      }
+`;
+
 export const FormLabel = styled.label``;
 export const FormButtonSubmit = styled.button`
   color: black;
@@ -17,4 +26,9 @@ export const FormButtonSubmit = styled.button`
   border-radius: 6px;
   margin-top: 20px;
   background-color: orange;
+  padding: 10px;
+
+    :hover {
+      background-color: grey;
+    }
 `;

@@ -4,12 +4,13 @@ export const FormName = styled.form`
   width: 300px;
   border: 1px solid black;
   padding: 15px;
-
+  margin-bottom: 20px;
 `;
+
 export const InputName = styled.input`
   width: 180px;
-
 `;
+
 export const Label = styled.label`
   display: flex;
   justify-content: space-between;
@@ -26,5 +27,9 @@ export const Button = styled.button`
   background-color: orange;
   border-radius: 6px;
   font-weight: bold; 
+
+    :hover {
+        background-color: grey;
+      }
 `;
 

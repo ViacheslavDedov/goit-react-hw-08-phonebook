@@ -4,4 +4,5 @@ export const FilterInput = styled.input`
   padding: 5px;
   width: 300px;
   border: solid 1px black;
+  margin-bottom: 10px;
 `;

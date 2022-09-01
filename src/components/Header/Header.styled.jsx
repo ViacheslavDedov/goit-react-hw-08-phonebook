@@ -20,17 +20,25 @@ export const HeaderWrapper = styled.div`
 
 export const NavLinkStyled = styled(NavLink)`
   color: orange;
-  font-weight: 400;
+  font-weight: 600;
   margin-right: 30px;
+
+  :hover {
+      color: grey;
+    }
 `;
 
 export const NavButtonStyled = styled.button`
   color: black;
-  font-weight: 400;
+  font-weight: 600;
   cursor: pointer;
   background-color: orange;
   border-radius: 6px;
   padding: 10px;
+
+    :hover {
+      background-color: grey;
+    }
 `;
 
 export const LinkWrapper = styled.div`
